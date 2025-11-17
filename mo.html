@@ -1,0 +1,114 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Login Modal</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .open-btn {
+    padding: 10px 20px;
+    background-color: #4b7bec;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+
+  .open-btn:hover {
+    background-color: #3867d6;
+  }
+  .modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .modal:target {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-content {
+    background: #fff;
+    width: 300px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideDown 0.4s ease;
+    position: relative;
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #999;
+    transition: color 0.3s;
+  }
+
+  .close:hover {
+    color: #000;
+  }
+  input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4b7bec;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .login-btn:hover {
+    background-color: #3867d6;
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+  <a href="#loginModal" class="open-btn">Open Login</a>
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Login</h2>
+      <input type="text" placeholder="Username" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button class="login-btn">Login</button>
+    </div>
+  </div>
+
+</body>
+</html>
